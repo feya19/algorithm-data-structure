@@ -12,25 +12,25 @@ public class Dragon {
   
     void moveLeft() {
         x--;
-        System.out.println("Move Left");
+        System.out.printf("Move Left. Dragon in (x: %d, y: %d)\n", x, y);
         detectCollision();
     }
     
     void moveRight() {
         x++;
-        System.out.println("Move Right");
+        System.out.printf("Move Right. Dragon in (x: %d, y: %d)\n", x, y);
         detectCollision();
     }
     
     void moveUp() {
         y--;
-        System.out.println("Move Up");
+        System.out.printf("Move Up. Dragon in (x: %d, y: %d)\n", x, y);
         detectCollision();
     }
     
     void moveDown() {
         y++;
-        System.out.println("Move Down");
+        System.out.printf("Move Down. Dragon in (x: %d, y: %d)\n", x, y);
         detectCollision();
     }
     
