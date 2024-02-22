@@ -19,6 +19,13 @@ public class BukuMain10 {
         bk2.tampilInformasi();
 
         Buku10 bukuFahmiYahya = new Buku10("Self Report", "Fahmi Yahya", 60, 30, 29000);
+        System.out.println("===================");
         bukuFahmiYahya.tampilInformasi();
+        int hargaTotal = bukuFahmiYahya.hitungHargaTotal(4);
+        int diskon = bukuFahmiYahya.hitungDiskon(hargaTotal);
+        int bayar = bukuFahmiYahya.hitungHargaBayar(hargaTotal, diskon);
+        System.out.printf("Subtotal: %d\n", hargaTotal);
+        System.out.printf("Diskon: %d\n", diskon);
+        System.out.printf("Total: %d", bayar);
     }
 }
