@@ -59,11 +59,41 @@ public class Gudang10 {
             return null;
         }
     }
+    
+    public Barang10 lihatBarangTerbawah() {
+        if (!cekKosong()) {
+            Barang10 barangTerbawah = tumpukan[0];
+            System.out.println("Barang terbawah: "+ barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public Barang10 cariBarang(String search) {
+        if (!cekKosong()) {
+            for (int i = top; i >= 0 ; i--) {
+                String kode = String.valueOf(tumpukan[i].kode);
+                if (tumpukan[i].nama.equalsIgnoreCase(search) || kode.equals(search)) {
+                    System.out.println("Barang ditemukan: ");
+                    System.out.println("Kode:\t"+ tumpukan[i].kode);
+                    System.out.println("Nama:\t"+ tumpukan[i].nama);
+                    System.out.println("Kategori:\t"+ tumpukan[i].kategori);
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang tidak ditemukan.");
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+        }
+        return null;
+    }
 
     public void tampilkanBarang() {
         if (!cekKosong()) { 
             System.out.println("Rincian tumpukan barang di Gudang: ");
-            for (int i = 0; i <= top ; i++) {
+            for (int i = top; i >= 0 ; i--) {
                 System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[i].kode, tumpukan[i].nama, tumpukan[i].kategori);
             }
         } else {
